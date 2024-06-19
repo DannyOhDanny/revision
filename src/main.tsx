@@ -1,11 +1,12 @@
 import React from 'react';
 
 import { createRoot } from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { router } from './app/router/router';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import store from './app/slices/index.ts';
+
+import App from './app/App.tsx';
 
 import './index.css';
 
@@ -17,7 +18,9 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <RouterProvider router={router} />
+        <Router>
+          <App />
+        </Router>
       </Provider>
     </React.StrictMode>
   );

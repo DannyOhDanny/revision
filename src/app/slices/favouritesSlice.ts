@@ -1,6 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState = {
+interface Photo {
+  id: string;
+}
+
+interface PhotosState {
+  photos: Photo[];
+}
+
+const initialState: PhotosState = {
   photos: []
 };
 
@@ -8,7 +16,7 @@ const photosSlice = createSlice({
   name: 'photos',
   initialState,
   reducers: {
-    addPhoto(state, action) {
+    addPhoto(state, action: PayloadAction<Photo>) {
       const existingPhoto = state.photos.find(
         photo => photo.id === action.payload.id
       );
@@ -17,7 +25,7 @@ const photosSlice = createSlice({
         state.photos.push(action.payload);
       }
     },
-    removePhoto(state, action) {
+    removePhoto(state, action: PayloadAction<Photo>) {
       const photoIndex = state.photos.findIndex(
         photo => photo.id === action.payload.id
       );
@@ -28,5 +36,6 @@ const photosSlice = createSlice({
     }
   }
 });
+
 export const { addPhoto, removePhoto } = photosSlice.actions;
 export default photosSlice.reducer;

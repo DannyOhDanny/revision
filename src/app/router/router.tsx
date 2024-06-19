@@ -1,30 +1,18 @@
-import { createBrowserRouter } from 'react-router-dom';
-import { ErrorPage } from '../../pages/ErrorPage';
-import { MainPage } from '../../pages/MainPage';
-import App from '../App';
+import { Route, Routes } from 'react-router-dom';
+
 import { FavouritesPage } from '../../pages/FavouritesPage';
+import { MainPage } from '../../pages/MainPage';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: '/',
-        element: <MainPage />
-      },
+import ErrorPage from '../../pages/ErrorPage/ui/ErrorPage';
 
-      {
-        path: '/favourites',
-        element: <FavouritesPage />
-      },
-      {
-        path: '/*',
-        element: <ErrorPage />
-      }
-    ]
-  }
-]);
-
-export { router };
+export const Routing = () => {
+  return (
+    <>
+      <Routes>
+        <Route path="*" element={<ErrorPage />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/favourites" element={<FavouritesPage />} />
+      </Routes>
+    </>
+  );
+};

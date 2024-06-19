@@ -1,8 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Outlet } from 'react-router-dom';
 import { StyleSheetManager } from 'styled-components';
 import AppStyles from './styled';
-
+import { Routing } from './router/router';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -16,7 +15,7 @@ function App() {
       <AppStyles />
       <main>
         <QueryClientProvider client={queryClient}>
-          <Outlet />
+          <Routing />
         </QueryClientProvider>
       </main>
     </StyleSheetManager>
