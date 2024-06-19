@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useQueryClient } from '@tanstack/react-query';
 import { InvalidateQueryFilters } from '@tanstack/react-query';
-import { Query } from '@tanstack/react-query';
-import { QueryKey } from '@tanstack/react-query';
+
 import usersAPI from '../api/api.ts';
 
 import { AlbumComponent } from '../../AlbumComponent/index.ts';
@@ -18,22 +17,19 @@ import {
   UserName,
   SectionWrapper,
   AlbumWrapper
-} from '../styled.ts';
+} from './styled.ts';
 
 import icOpen from '../../../assets/ic_open.svg';
 import icClose from '../../../assets/ic_close.svg';
 
 const UserComponent = () => {
   const queryClient = useQueryClient();
-
-  const [clickedUserId, setClickedUserId] = useState<string | null>(
-    '9f2483a8-69a1-4f90-9160-ec291ed32fdf'
-  );
+  const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
   const [usersList, setUsersList] = useState<IUser[]>([]);
   const [albumList, setAlbumList] = useState<TAlbum[]>([]);
 
   const handleClick = (userId: string) => {
-    setClickedUserId(clickedUserId === userId ? null : userId);
+    setSelectedUserId(userId);
     queryClient.invalidateQueries('get-albums' as InvalidateQueryFilters);
   };
 
@@ -52,38 +48,44 @@ const UserComponent = () => {
   }, [users]);
 
   const { data: albums = [] } = useQuery<TAlbum[]>({
-    queryKey: ['get-albums'],
+    queryKey: ['get-albums', selectedUserId],
     queryFn: async () => {
-      if (clickedUserId) {
-        const albumData = await usersAPI.getAlbums(clickedUserId);
+      if (selectedUserId) {
+        const albumData = await usersAPI.getAlbums(selectedUserId);
         return albumData || [];
       }
       return [];
-    }
+    },
+    enabled: !!selectedUserId
   });
 
   useEffect(() => {
-    if (albums) {
+    if (albums && selectedUserId) {
       setAlbumList(albums);
     }
-  }, [clickedUserId]);
+  }, [albums, selectedUserId]);
+
+  //console.log(selectedUserId, albumList, 'USER-ALBUM');
 
   return (
     <SectionWrapper>
       {usersList.map(user => (
-        <>
-          <LineWrapper key={user.id} onClick={() => handleClick(user.id)}>
-            <Image src={clickedUserId == user.id ? icClose : icOpen} />
-
+        <div key={user.id}>
+          <LineWrapper onClick={() => handleClick(user.id)}>
+            <Image src={selectedUserId === user.id ? icClose : icOpen} />
             <UserName>{user.name}</UserName>
           </LineWrapper>
 
           <AlbumWrapper>
-            {clickedUserId === user.id && (
+            {selectedUserId === user.id && albumList && (
               <AlbumComponent albums={albumList}></AlbumComponent>
             )}
+
+            {selectedUserId === user.id &&
+              albumList &&
+              albumList.length === 0 && <p>Loading...</p>}
           </AlbumWrapper>
-        </>
+        </div>
       ))}
     </SectionWrapper>
   );

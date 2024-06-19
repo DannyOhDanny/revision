@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fonts } from '../../utils/fonts';
+import { fonts } from '../../../utils/fonts';
 
 const LineWrapper = styled.div`
   padding: 0px 72px 0px 56px;
@@ -23,5 +23,11 @@ const UserName = styled.p`
   font-size: 18px;
   line-height: 1.3;
 `;
+const AlbumWrapper = styled.div`
+  margin: 0 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 42px;
+`;
 
-export { LineWrapper, Image, UserName };
+export { LineWrapper, Image, UserName, AlbumWrapper };

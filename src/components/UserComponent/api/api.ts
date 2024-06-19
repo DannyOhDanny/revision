@@ -44,7 +44,6 @@ const usersAPI = {
     return axios
       .get(`${BASE_URL}/photos/${albumId}`, { headers })
       .then(response => {
-        console.log(response);
         return response.data;
       })
       .catch(error => {

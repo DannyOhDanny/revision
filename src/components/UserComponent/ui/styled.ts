@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fonts } from '../../utils/fonts';
+import { fonts } from '../../../utils/fonts';
 const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
