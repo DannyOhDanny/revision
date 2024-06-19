@@ -4,3 +4,9 @@ export type TPhoto = {
   title: string;
   url: string;
 };
+
+export type TStore = {
+  favourites: {
+    photos: TPhoto[];
+  };
+};

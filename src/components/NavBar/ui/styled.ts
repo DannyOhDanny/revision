@@ -26,5 +26,13 @@ const MainLink = styled.a<{ $active?: boolean }>`
   font-size: 18px;
   line-height: 1.3;
   cursor: pointer;
+
+  &:hover {
+    border: 1px solid ${colors.navTextColor};
+  }
+
+  &:focus {
+    border: 1px solid ${colors.activeNavColor};
+  }
 `;
 export { ButtonWrapper, MainLink };

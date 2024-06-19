@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-  margin: 64px auto;
-
+  margin: 56px auto;
   max-width: 744px;
   height: fit-content;
-  display: flex;
 `;
 const BlockWrapper = styled.div`
   margin: auto 0;
@@ -29,4 +27,11 @@ const BlockWrapper = styled.div`
     line-height: 1.3;
   }
 `;
-export { StyledSection, BlockWrapper };
+
+const FavouritesWrapper = styled.div`
+  display: grid;
+  margin: 60px 100px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 42px;
+`;
+export { StyledSection, BlockWrapper, FavouritesWrapper };

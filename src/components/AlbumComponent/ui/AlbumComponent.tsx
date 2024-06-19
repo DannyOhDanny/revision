@@ -46,8 +46,6 @@ export const AlbumComponent = ({ albums }: { albums: TAlbum[] }) => {
 
   if (error) return 'An error has occurred: ' + error.message;
 
-  //console.log(selectedAlbumId, albumPhotoList, 'PhotoList');
-
   return (
     <>
       {albums.map(album => (

@@ -1,7 +1,12 @@
 import React from 'react';
+
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import { router } from './app/router/router';
+
+import store from './app/slices/index.ts';
+
 import './index.css';
 
 const container = document.getElementById('root');
@@ -11,7 +16,9 @@ if (container) {
 
   root.render(
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </React.StrictMode>
   );
 } else {
