@@ -2,6 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 const AppStyles = createGlobalStyle`
 
+html {
+display: flex;
+}
+
 *,
 *::before,
 *::after {
@@ -57,14 +61,16 @@ html {
         scroll-behavior: smooth;
     }
 }
- a{
- text-decoration: none;}
-body {
+
+a {
+   text-decoration: none;
+ }
+
+ body {
     min-height: 100%;
     text-rendering: optimizespeed;
     background-color: white;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 *,

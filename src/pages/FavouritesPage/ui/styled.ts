@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-  margin: 56px auto;
+  margin: 64px auto;
   max-width: 744px;
   height: fit-content;
 `;
 const BlockWrapper = styled.div`
-  margin: auto 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;

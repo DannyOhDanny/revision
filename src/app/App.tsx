@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { StyleSheetManager } from 'styled-components';
 import AppStyles from './styled';
 import { Routing } from './router/router';
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -9,6 +10,7 @@ const queryClient = new QueryClient({
     }
   }
 });
+
 function App() {
   return (
     <StyleSheetManager enableVendorPrefixes>
