@@ -17,7 +17,7 @@ MVP приложение для просмортра альбомов польз
 
 Бэкэнд :
 
-- `git clone git@github.com:DannyohDanny/` - клонируйте репозиторий;
+- `git clone https://github.com/DannyOhDanny/revision.git` - клонируйте репозиторий;
 
 - `npm install` - yстановите зависимости;
 
@@ -25,7 +25,7 @@ MVP приложение для просмортра альбомов польз
 
 Фронтенд:
 
-- `git clone git@github.com:DannyohDanny/` - клонируйте репозиторий;
+- `git clone https://github.com/DannyOhDanny/revision.git` - клонируйте репозиторий;
 
 - `npm install` - yстановите зависимости;
 
