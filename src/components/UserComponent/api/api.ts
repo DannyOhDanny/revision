@@ -13,7 +13,10 @@ const usersAPI = {
         return response.data;
       })
       .catch(error => {
-        console.error('Произошла ошибка при получении данных:', error);
+        console.error(
+          'Пользователи: Произошла ошибка при получении данных:',
+          error
+        );
         return null;
       });
   },
@@ -29,7 +32,23 @@ const usersAPI = {
         return response.data;
       })
       .catch(error => {
-        console.error('Произошла ошибка при получении данных:', error);
+        console.error('Альбомы: Произошла ошибка при получении данных:', error);
+        return null;
+      });
+  },
+  getAlbumPhotos: (albumId: string) => {
+    const headers = {
+      'Content-Type': 'application/json'
+    };
+
+    return axios
+      .get(`${BASE_URL}/photos/${albumId}`, { headers })
+      .then(response => {
+        console.log(response);
+        return response.data;
+      })
+      .catch(error => {
+        console.error('Фото: Произошла ошибка при получении данных:', error);
         return null;
       });
   }
