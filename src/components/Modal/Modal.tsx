@@ -4,10 +4,7 @@ import { ModalContainer, ModalOverlay, CloseButton } from './styled.ts';
 
 import closeButton from '../../assets/ic_close_modal.svg';
 
-type TModal = {
-  onClose: () => void;
-  link: string | null;
-};
+import { TModal } from './types.ts';
 
 const Modal: React.FC<TModal> = ({ onClose, link }) => {
   useEffect(() => {

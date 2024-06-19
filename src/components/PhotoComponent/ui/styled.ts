@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+
 import { fonts } from '../../../utils/fonts';
+
 import colors from '../../../utils/colors';
 
 const LineWrapper = styled.div`

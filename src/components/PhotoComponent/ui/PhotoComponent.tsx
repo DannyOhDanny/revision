@@ -38,8 +38,6 @@ export const PhotoComponent = ({ photos }: { photos: TPhoto[] }) => {
     localStorage.setItem('FavouritesStore', JSON.stringify(photosStore));
   }, [photosStore]);
 
-  //console.log(photosStore, 'store1');
-
   const handleSelectFavourite = (photo: TPhoto) => {
     const photoIndex = photosStore.findIndex(
       (item: TPhoto) => item.id === photo.id

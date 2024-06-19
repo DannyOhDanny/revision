@@ -9,6 +9,7 @@ import usersAPI from '../../UserComponent/api/api.ts';
 import { TAlbum } from 'src/components/UserComponent/types.ts';
 import { PhotoComponent } from '../../../components/PhotoComponent/index.ts';
 import { TPhoto } from 'src/components/PhotoComponent/types.ts';
+
 import icOpen from '../../../assets/ic_open.svg';
 import icClose from '../../../assets/ic_close.svg';
 

@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
-import { StyledSection } from '../ui/styled.ts';
+
+import { useDispatch } from 'react-redux';
+
 import { NavBar } from '../../../components/NavBar/index.ts';
 import { UserComponent } from '../../../components/UserComponent/index.ts';
 import { TPhoto } from 'src/components/PhotoComponent/types.ts';
-import { useDispatch } from 'react-redux';
 
 import { addPhoto } from '../../../app/slices/favouritesSlice.ts';
+
+import { StyledSection } from '../ui/styled.ts';
 
 const MainPage = () => {
   const [favourites, setFavourites] = useState<TPhoto[]>();

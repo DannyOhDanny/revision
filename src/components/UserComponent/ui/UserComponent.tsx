@@ -65,8 +65,6 @@ const UserComponent = () => {
     }
   }, [albums, selectedUserId]);
 
-  //console.log(selectedUserId, albumList, 'USER-ALBUM');
-
   return (
     <SectionWrapper>
       {usersList.map(user => (
