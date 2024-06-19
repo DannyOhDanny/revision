@@ -15,15 +15,16 @@ MVP приложение для просмортра альбомов польз
 
 # Установка
 
-Бэкэнд :
+1. Запустите Бэкэнд: https://github.com/DannyOhDanny/revision-api:
 
-- `git clone https://github.com/DannyOhDanny/revision.git` - клонируйте репозиторий;
+- `git clone https://github.com/DannyOhDanny/revision-api.git` - клонируйте репозиторий;
+  ` - клонируйте репозиторий;
 
 - `npm install` - yстановите зависимости;
 
-- `npm run start` - запустите проект на `localhost: 3100`;
+- `npm run start` - запустите проект на `localhost: 3000`;
 
-Фронтенд:
+2. Запустите фронтенд: https://github.com/DannyOhDanny/revision:
 
 - `git clone https://github.com/DannyOhDanny/revision.git` - клонируйте репозиторий;
 
