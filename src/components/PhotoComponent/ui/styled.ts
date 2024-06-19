@@ -15,6 +15,7 @@ const Image = styled.img`
   width: 150px;
   height: 150px;
   cursor: pointer;
+  postition: relative;
 `;
 
 const UserName = styled.p`
@@ -41,4 +42,13 @@ const Tooltip = styled.div`
   display: none;
 `;
 
-export { LineWrapper, Image, UserName, Tooltip };
+const FavIcon = styled.div<{ $img?: string }>`
+  background-image: url('${props => props.$img}');
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+`;
+
+export { LineWrapper, Image, UserName, Tooltip, FavIcon };

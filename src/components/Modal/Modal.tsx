@@ -2,7 +2,7 @@ import React, { useEffect, MouseEventHandler } from 'react';
 
 import { ModalContainer, ModalOverlay, CloseButton } from './styled.ts';
 
-import closeButton from '../../assets/Close_modal.svg';
+import closeButton from '../../assets/ic_close_modal.svg';
 
 type TModal = {
   onClose: () => void;
